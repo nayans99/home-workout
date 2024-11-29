@@ -14,7 +14,7 @@ export default function CategoryListComponent() {
     return (
         <div className="mx-15 flex flex-col gap-5">
             {yogaWorkoutData.map(data => (
-                        <SingleCategoryComponent workout={data} />
+                        <SingleCategoryComponent key={data.id} workout={data} />
                     ))}
              {/* <Accordion>
                 <AccordionItem

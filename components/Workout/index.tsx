@@ -21,12 +21,14 @@ const WorkoutListComponent = ({workoutId}: {workoutId: string}) => {
     const [currentWorkout, setCurrentWorkout] = useState(0);
 
   const handleNext = () => {
+    if (!workout || !workout.items) return;
     setCurrentWorkout((prevIndex) =>
       prevIndex === workout.items.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const handlePrev = () => {
+    if (!workout || !workout.items) return;
     setCurrentWorkout((prevIndex) =>
       prevIndex === 0 ? workout.items.length - 1 : prevIndex - 1
     );
